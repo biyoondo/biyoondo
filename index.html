@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+
+    <!-- Подключение пиксельного шрифта -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: black;
+            color:darkred; /* Измените цвет на зеленый для стилизации под BIOS */
+            margin: 0;
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Изменено на flex-start для распределения вниз */
+            height: 100vh;
+        }
+
+        h1, p {
+            filter: sepia(1) saturate(10) hue-rotate(-50deg);
+            font-weight: 300;
+        }
+
+        h1 {
+            font-size: 24px; 
+        }
+
+        p {
+            font-size: 16px; 
+        }
+
+        .header-image {
+            width: 100%;
+            display: block; 
+            margin: 0;
+            filter: sepia(1) saturate(10) hue-rotate(-50deg);
+        }
+
+        .loading-container {
+            position: absolute; /* Позиционирование для заполнения области */
+            bottom: 10px; /* Отступ от нижней части окна */
+            text-align: center;
+        }
+
+        .loading-text {
+            font-size: 14px;
+            animation: blink 1s step-end infinite; /* Бликующий текст */
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="/Picsart_25-01-21_19-26-29-624.jpg" alt="Описание изображения" class="header-image">
+    <h1>welcome to zonbinoyoni</h1>
+    <p>Zombika Biyoondo production</p>
+
+    <div class="loading-container">
+        <div class="loading-text">Under Construction. Something big is coming…</div> <!-- Перевод на английский -->
+        
+    </div>
+
+</body>
+</html>
