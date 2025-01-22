@@ -11,7 +11,7 @@
     <style>
         body {
             background-color: black;
-            color:darkred; /* Измените цвет на зеленый для стилизации под BIOS */
+            color: darkred; /* Измените цвет на зеленый для стилизации под BIOS */
             margin: 0;
             font-family: 'Press Start 2P', cursive;
             display: flex;
@@ -27,16 +27,16 @@
         }
 
         h1 {
-            font-size: 24px; 
+            font-size: 24px;
         }
 
         p {
-            font-size: 16px; 
+            font-size: 16px;
         }
 
         .header-image {
             width: 100%;
-            display: block; 
+            display: block;
             margin: 0;
             filter: sepia(1) saturate(10) hue-rotate(-50deg);
         }
@@ -55,6 +55,29 @@
         @keyframes blink {
             50% { opacity: 0; }
         }
+
+        /* Адаптивные стили для изображения */
+        @media (min-width: 769px) {
+            .header-image {
+                max-width: 500px; /* Установите ширину для изображения на ПК */
+                height: auto;
+                position: fixed; /* Фиксированное позиционирование */
+                top: 50%; /* Центрирование по вертикали */
+                left: 50%; /* Центрирование по горизонтали */
+                transform: translate(-50%, -50%); /* Полное центрирование */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-image {
+                max-width: 90%; /* Изображение занимает почти всю ширину экрана */
+                height: auto; /* Сохраняет пропорции */
+                position: relative; /* Без фиксированного позиционирования */
+                top: 0; /* Изображение находится в верхней части экрана */
+                left: 0;
+                transform: none; /* Убираем сдвиг */
+            }
+        }
     </style>
 </head>
 <body>
@@ -64,51 +87,8 @@
     <p>Zombika Biyoondo production</p>
 
     <div class="loading-container">
-        <div class="loading-text">Under Construction. Something big is coming…</div> <!-- Перевод на английский -->
-        
+        <div class="loading-text">Under Construction. Something big is coming…</div>
     </div>
 
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Базовый стиль для всех устройств */
-    img {
-      display: block;
-      margin: auto;
-    }
-
-    /* Стили для больших экранов (ПК) */
-    @media (min-width: 769px) {
-      img {
-        max-width: 500px; /* Установите ширину для изображения на ПК */
-        height: auto;
-        position: fixed; /* Фиксированное позиционирование */
-        top: 50%; /* Центрирование по вертикали */
-        left: 50%; /* Центрирование по горизонтали */
-          filter: sepia(1) saturate(10) hue-rotate(-50deg);
-        transform: translate(-50%, -50%); /* Полное центрирование */
-      }
-    }
-
-    /* Стили для мобильных устройств */
-    @media (max-width: 768px) {
-      img {
-        max-width: 90%; /* Изображение занимает почти всю ширину экрана */
-        height: auto; /* Сохраняет пропорции */
-        position: relative; /* Без фиксированного позиционирования */
-        top: 0; /* Изображение находится в верхней части экрана */
-        left: 0;
-        transform: none; /* Убираем сдвиг */
-      }
-    }
-  </style>
-</head>
-<body>
-  <img src="img/photo_2025-01-22_13-01-24.jpg" alt="Example">
 </body>
 </html>
