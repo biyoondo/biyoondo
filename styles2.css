@@ -33,6 +33,12 @@ html, body {
   padding: 0;
   position: relative;
   z-index: 0;
+  overflow-y: scroll; 
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none; 
 }
 
 
