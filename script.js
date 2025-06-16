@@ -54,16 +54,19 @@ scene.addEventListener("click", () => {
   } else {
     textContainer.style.display = "none";
 
-    if (!document.querySelector(".button")) {
-      const btn = document.createElement("button");
-      btn.textContent = "Enter the world";
-      btn.className = "button";
-      btn.onclick = () => {
-        window.location.href = "index2.html";
-      };
-      scene.appendChild(btn);
-    }
+  if (!document.querySelector(".button")) {
+  const btn = document.createElement("button");
+  btn.textContent = "Enter the world";
+  btn.className = "button";
+  btn.onclick = () => {
+    localStorage.setItem('lastPage', 'index.html');  // сохраняем
+    window.location.href = "index2.html";
+  };
+  scene.appendChild(btn);
+}
+
   }
+  
 });
 
 // Модалка и кнопка журнала
