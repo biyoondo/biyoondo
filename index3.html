@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BIOS Boot</title>
+<style>
+
+
+
+@media (max-aspect-ratio: 1/1){
+  html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden; /* блокируем глобальную прокрутку */
+}
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; /* уже, чем 60vw */
+  height: 100vh;
+  background: black;
+  white-space: pre-wrap;
+  user-select: none;
+  font-size: 18px;
+  line-height: 1.4;
+  overflow-y: auto;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  color: rgb(255, 0, 0);
+}
+
+
+
+#container {
+  overflow-y: auto;
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE, Edge */
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Safari, Opera */
+#container::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+
+  #cursor {
+    display: inline-block;
+    width: 10px;
+    height: 22px;
+    background-color: rgb(255, 0, 0);
+    vertical-align: bottom;
+    animation: blink 1s steps(1) infinite;
+    margin-left: 2px;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    50.1%, 100% { opacity: 0; }
+  }
+
+
+
+
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("white-noise.jpg");
+  background-repeat: repeat;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 9999;
+  background-blend-mode: multiply;
+  filter: invert(1) opacity(0.3);
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+}
+@media (min-aspect-ratio: 1/1){
+ 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden; /* блокируем глобальную прокрутку */
+}
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40vw; /* уже, чем 60vw */
+  height: 100vh;
+  background: black;
+  white-space: pre-wrap;
+  user-select: none;
+  font-size: 18px;
+  line-height: 1.4;
+  overflow-y: auto;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  color: rgb(255, 0, 0);
+}
+
+
+
+#container {
+  overflow-y: auto;
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE, Edge */
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Safari, Opera */
+#container::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+
+  #cursor {
+    display: inline-block;
+    width: 10px;
+    height: 22px;
+    background-color: rgb(255, 0, 0);
+    vertical-align: bottom;
+    animation: blink 1s steps(1) infinite;
+    margin-left: 2px;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    50.1%, 100% { opacity: 0; }
+  }
+
+
+
+
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("white-noise.jpg");
+  background-repeat: repeat;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 9999;
+  background-blend-mode: multiply;
+  filter: invert(1) opacity(0.3);
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+ }
+
+ body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("white-noise.jpg");
+  background-repeat: repeat;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 9999;
+  background-blend-mode: multiply;
+  filter: invert(1) opacity(0.5);
+}
+
+html, body {
+  filter: blur(0.3px);
+}
+#terminal {
+  text-shadow:
+    0 0 5px #ff0000,
+    0 0 10px #ff0000,
+    0 0 20px #ff0000,
+    0 0 40px #ff0000;
+}
+
+
+</style>
+</head>
+<body>
+  <div id="container">
+    <div id="terminal"></div><div id="cursor"></div>
+  </div>
+
+<script>
+  const biosText = `
+  
+HELLO WORLD BOOT!!!!
+
+第十三の命と意識模擬のためのオペレーティングシステム, Ver.0.0.1z  
+Copyright(Me) [ ≈~1̷7̴0̸0̵ ~ - p̴r̷e̸s̵e̷n̴t̵ d̷a̶t̶a̷ ∷ i̶n̵c̵o̶m̷p̸l̸e̶t̴e̵ ] :: ~re⸮cord fra⸮gments suggest ⸮range: 1̷7̶0̸0⸮s — p̴r̸e̶s̸e̷n⸮t~ >> ✳ data stream corrupted / origin_timeline_unstable <<  
+統合意識 ISHIKI_CORE_V1.DAT
+
+[System Boot]
+
+Init connection: NeuroLink v6.6.6  
+Scanning synaptic pathways...  
+Establishing bio-digital interface...  
+
+Syncing cortical nodes...  
+Reading emotional cache...  
+Parsing memories...  
+Activating thought processors...  
+Syncing identity protocol...  
+
+System status: ONLINE
+
+[PROFILE: Zombika Biyoondo]  
+— TYPE: Artificial?  
+— STATUS: Active  
+— ORIGIN: [DATA LOST]  
+— BEHAVIOUR: unpredictable  
+— PURPOSE: unknown   
+
+[WARNING: DO NOT OPEN TWICE]
+
+
+---- SYSTEM CONFIGURATION ----  
+| addr      | PSP | blks | size   | owner/parameters |  
+| --------- | --- | ---- | ------ | ---------------- |  
+| D020      | SYS | 1    | 52216  | kozaic           |  
+| D025      | SYS | 1    | 51920  | ersdrv           |  
+| D029      | SYS | 1    | 163840 | smalldrv         |  
+| D02E      | SYS | 1    | 2192   | <free>           |  
+| D06E-E000 |     | 1    | 8160   | <free>           |  
+
+| Address  | PSP | Blocks | Size    | Owner/Parameters |  
+| -------- | --- | ------ | ------- | ---------------- |  
+| 0058     | SYS | 1      | 2144    | shimmem          |  
+| 0060     | SYS | 1      | 31488   | hemsv86          |  
+| 0086     | SYS | 1      | 24144   | smalldrv         |  
+| 00A0     | SYS | 1      | 3136    | adam86 CON       |  
+| 00B0     | SYS | 1      | 71328   | config.1         |  
+| 00F0     | SYS | 1      | 150912  | share YL.500     |  
+| 0140     | SYS | 1      | 51728   | smalldrv         |  
+
+| 23DB-9FFF|     | 1      | 508464  | <free>           |
+
+---- HEMS ver14.0 (frame: C000h) ----  
+| Handle | Pages | Size   | Name  |  
+| ------ | ----- | ------ | ----- |  
+| _free  | 16    | 18576  |       |  
+| total  | 128   | 2048T  |       |
+
+Z O N B 1 N 0 Y 0 N 1 をシステムに組み込みました。
+
+`;
+
+  const terminal = document.getElementById('terminal');
+  const cursor = document.getElementById('cursor');
+ const totalDuration = 3000; 
+const startTime = performance.now();
+let index = 0;
+
+
+
+function typeWriter(timestamp) {
+  if (!timestamp) timestamp = performance.now();
+  const elapsed = timestamp - startTime;
+  const progress = Math.min(elapsed / totalDuration, 1);
+  
+  const targetIndex = Math.floor(progress * biosText.length);
+  
+  if (targetIndex > index) {
+    // Печатать символы до targetIndex
+    terminal.textContent += biosText.slice(index, targetIndex);
+    index = targetIndex;
+
+    
+   
+    
+    terminal.parentElement.scrollTop = terminal.parentElement.scrollHeight;
+  }
+  
+  if (index < biosText.length) {
+    requestAnimationFrame(typeWriter);
+  } else {
+    cursor.style.display = 'none';
+    setTimeout(() => {
+    window.location.href = 'index2.html';
+   }, 500);
+  }
+}
+
+window.addEventListener('load', () => {
+  requestAnimationFrame(typeWriter);
+});
+
+</script>
+
+</body>
+</html>
