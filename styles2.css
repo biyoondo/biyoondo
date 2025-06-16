@@ -1,4 +1,4 @@
-/* ========== ОБЩИЕ СТИЛИ (БЕЗ media) ========== */
+
 
 
 @font-face {
@@ -33,16 +33,13 @@ html, body {
   padding: 0;
   position: relative;
   z-index: 0;
-  overflow-y: scroll; 
+   overflow-y: scroll; 
   scrollbar-width: none;
 }
 
 body::-webkit-scrollbar {
   display: none; 
 }
-
-
-
 
 
 
@@ -248,7 +245,7 @@ svg.text-ring-2 text {
   color: transparent;
   -webkit-text-stroke: 2px black;
   z-index: 1;
-  pointer-events: none; /* чтобы клики не блокировались */
+  pointer-events: none; 
 }
 
 
@@ -271,7 +268,7 @@ svg.text-ring-2 text {
   color: transparent;
   -webkit-text-stroke: 2px black;
   z-index: 1;
-  pointer-events: none; /* чтобы клики не блокировались */
+  pointer-events: none; 
 }
 
 
@@ -369,7 +366,7 @@ a {
 
 
 #openModalYouTube, #openModalInst, #openModalCloud, #openModalSpotify, #openModalTok, #openModalGram {
-  /* тут твои стили */
+  
   background-color: black;
 }
 
@@ -528,15 +525,15 @@ svg text.outline {
   background-color: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
-  padding: 20px; /* добавим отступы, если вдруг слишком маленький экран */
+  padding: 20px; 
   box-sizing: border-box;
 }
 
 .modal-content {
   width: 100%;
-  max-width: 600px;       /* ограничим ширину */
-  max-height: 80vh;       /* ограничим высоту */
-  overflow-y: auto;       /* если контента много — прокручивается */
+  max-width: 600px;       
+  max-height: 80vh;      
+  overflow-y: auto;      
   background-color: #111;
   color: #fff;
   padding: 30px;
