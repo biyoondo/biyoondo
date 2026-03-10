@@ -618,10 +618,10 @@ svg text.outline {
 
   .buttons-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 столбца */
-    grid-template-rows: repeat(2, 1fr);    /* 2 ряда */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr);    
     gap: 20px;
-    width: fit-content; /* только под контент */
+    width: fit-content; 
     height: fit-content;
     background: transparent;
     justify-items: center;
@@ -633,9 +633,9 @@ svg text.outline {
   background: rgba(0, 0, 0, 0.85);
   border: 2px solid #f00;
   border-radius: 10px;
-  padding: 16px 20px; /* внутренние отступы */
-  margin: 16px auto; /* сверху/снизу 16px, слева/справа авто — центрируем */
-  max-width: 90vw;   /* максимальная ширина 90% от ширины окна */
+  padding: 16px 20px; 
+  margin: 16px auto; 
+  max-width: 90vw;   
   box-shadow: 0 0 10px #f00;
   color: #f00;
   font-family: 'pirata', sans-serif;
@@ -655,8 +655,8 @@ svg text.outline {
   }
 
 .outer-text-box {
-  transform: scale(1.2); /* увеличит в 1.5 раза */
-  transform-origin: center; /* чтобы масштабировалось из центра */
+  transform: scale(1.2); 
+  transform-origin: center; 
 }
 .text-box1 {
   background: rgb(0, 0, 0);
@@ -675,3 +675,4 @@ svg text.outline {
   transform: scale(1.2) ;
 }
 }
+
