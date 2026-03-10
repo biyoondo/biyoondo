@@ -16,7 +16,7 @@
   height: 100vh;
   background: black;
   font-family: 'Courier New', Courier, monospace;
-  overflow: hidden; /* блокируем глобальную прокрутку */
+  overflow: hidden;
 }
 
 #container {
@@ -24,7 +24,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw; /* уже, чем 60vw */
+  width: 100vw;
   height: 100vh;
   background: black;
   white-space: pre-wrap;
@@ -107,7 +107,7 @@ html, body {
   height: 100vh;
   background: black;
   font-family: 'Courier New', Courier, monospace;
-  overflow: hidden; /* блокируем глобальную прокрутку */
+  overflow: hidden;
 }
 
 #container {
@@ -115,7 +115,7 @@ html, body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 40vw; /* уже, чем 60vw */
+  width: 40vw;
   height: 100vh;
   background: black;
   white-space: pre-wrap;
@@ -305,13 +305,8 @@ function typeWriter(timestamp) {
   const targetIndex = Math.floor(progress * biosText.length);
   
   if (targetIndex > index) {
-    // Печатать символы до targetIndex
     terminal.textContent += biosText.slice(index, targetIndex);
     index = targetIndex;
-
-    
-   
-    
     terminal.parentElement.scrollTop = terminal.parentElement.scrollHeight;
   }
   
@@ -333,3 +328,4 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
